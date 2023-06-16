@@ -54,7 +54,7 @@ const Index = () => {
 
   return (
     <Main
-      meta={<Meta title="Login" description="AlphaBi task" />}
+      meta={<Meta title="Login" description="js-tiger task" />}
       theme={currentTheme}
     >
       <div className="hero min-h-screen bg-base-200">

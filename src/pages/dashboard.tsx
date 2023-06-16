@@ -86,7 +86,7 @@ const Dashboard = () => {
   }, [update]);
 
   return (
-    <Main meta={<Meta title="Dashboard" description="AlphaBi task" />}>
+    <Main meta={<Meta title="Dashboard" description="js-tiger vendor details" />}>
       <div className="h-screen w-screen overflow-x-auto p-16">
         <table className="table w-full">
           {/* head */}
