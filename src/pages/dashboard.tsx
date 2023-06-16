@@ -74,7 +74,7 @@ const Dashboard = () => {
   useEffect(() => {
     setToken(sessionStorage.getItem('token'));
     axios
-      .get('http://localhost:5000/v1/vendor', {
+      .get('https://js-tiger-server.onrender.com/v1/vendor', {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem('token')}`,
         },
@@ -194,15 +194,14 @@ const Dashboard = () => {
               onClick={() => {
                 axios
                   .delete(
-                    `http://localhost:5000/v1/vendor/${vendorData[currentVendorIndex]?.id}`,
+                    `https://js-tiger-server.onrender.com/v1/vendor/${vendorData[currentVendorIndex]?.id}`,
                     {
                       headers: {
                         Authorization: `Bearer ${token}`,
                       },
                     }
                   )
-                  .then((response) => {
-                    console.log(response);
+                  .then(() => {
                     setUpdate((prevVal) => !prevVal);
                     setIsDelete(false);
                   })

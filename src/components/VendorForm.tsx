@@ -37,25 +37,27 @@ const VendorForm: React.FC<{
     e.preventDefault();
     if (data) {
       axios
-        .patch(`http://localhost:5000/v1/vendor/${data.id}`, values, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        .then((response) => {
-          console.log(response);
+        .patch(
+          `https://js-tiger-server.onrender.com/v1/vendor/${data.id}`,
+          values,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then(() => {
           onClose();
         })
         .catch((err) => console.error(err));
     } else {
       axios
-        .post(`http://localhost:5000/v1/vendor`, values, {
+        .post(`https://js-tiger-server.onrender.com/v1/vendor`, values, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         })
-        .then((response) => {
-          console.log(response);
+        .then(() => {
           onClose();
         })
         .catch((err) => console.error(err));
@@ -169,7 +171,7 @@ const VendorForm: React.FC<{
           />
         </div>
       </div>
-      <div className="ga mt-4 flex w-full justify-end gap-4">
+      <div className="mt-4 flex w-full justify-end gap-4">
         <button className="btn-primary btn-active btn" type="submit">
           Submit
         </button>
