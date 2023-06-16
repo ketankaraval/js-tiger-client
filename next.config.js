@@ -15,7 +15,6 @@ module.exports = withBundleAnalyzer({
   // You can remove `basePath` if you don't need it.
   reactStrictMode: true,
   env: {
-    GIFY_API_KEY: 'GlVGYHkr3WSBnllca54iNt0yFbjz7L65',
-    BASE_URL: 'https://alphabi.onrender.com',
+    BASE_URL: 'https://js-tiger-server.onrender.com',
   },
 });

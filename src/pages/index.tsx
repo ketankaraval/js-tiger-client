@@ -93,7 +93,7 @@ const Index = () => {
                 onSuccess={(credentialResponse) => {
                   axios
                     .post(
-                      `https://js-tiger-server.onrender.com/v1/admin/login-with-google/${credentialResponse.credential}`
+                      `${process.env.BASE_URL}/v1/admin/login-with-google/${credentialResponse.credential}`
                     )
                     .then((res: { data: { data: string } }) => {
                       sessionStorage.setItem('token', res?.data?.data);

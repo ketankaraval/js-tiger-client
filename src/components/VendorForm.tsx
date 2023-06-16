@@ -37,22 +37,18 @@ const VendorForm: React.FC<{
     e.preventDefault();
     if (data) {
       axios
-        .patch(
-          `https://js-tiger-server.onrender.com/v1/vendor/${data.id}`,
-          values,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        )
+        .patch(`${process.env.BASE_URL}/v1/vendor/${data.id}`, values, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then(() => {
           onClose();
         })
         .catch((err) => console.error(err));
     } else {
       axios
-        .post(`https://js-tiger-server.onrender.com/v1/vendor`, values, {
+        .post(`${process.env.BASE_URL}/v1/vendor`, values, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

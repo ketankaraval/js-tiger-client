@@ -74,7 +74,7 @@ const Dashboard = () => {
   useEffect(() => {
     setToken(sessionStorage.getItem('token'));
     axios
-      .get('https://js-tiger-server.onrender.com/v1/vendor', {
+      .get(`${process.env.BASE_URL}/v1/vendor`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem('token')}`,
         },
@@ -86,7 +86,9 @@ const Dashboard = () => {
   }, [update]);
 
   return (
-    <Main meta={<Meta title="Dashboard" description="js-tiger vendor details" />}>
+    <Main
+      meta={<Meta title="Dashboard" description="js tiger vendor details" />}
+    >
       <div className="h-screen w-screen overflow-x-auto p-16">
         <table className="table w-full">
           {/* head */}
@@ -194,7 +196,7 @@ const Dashboard = () => {
               onClick={() => {
                 axios
                   .delete(
-                    `https://js-tiger-server.onrender.com/v1/vendor/${vendorData[currentVendorIndex]?.id}`,
+                    `${process.env.BASE_URL}/v1/vendor/${vendorData[currentVendorIndex]?.id}`,
                     {
                       headers: {
                         Authorization: `Bearer ${token}`,
